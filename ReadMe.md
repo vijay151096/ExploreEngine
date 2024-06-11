@@ -8,7 +8,7 @@
 > docker build -t vijaykumar151096/explore-engine-server .
 
 - To Run the docker image :
-> docker run explore-engine-server 
+> docker run vijaykumar151096/explore-engine-server 
 
 ### explore-engine-view is a react js application for the frontend
 
@@ -16,7 +16,7 @@
 > docker build -t vijaykumar151096/explore-engine-view .
 
 - To Run the docker image :
-> docker run explore-engine-view 
+> docker run vijaykumar151096/explore-engine-view 
 
 
 ### Running the Entire Application : 
