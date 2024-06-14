@@ -36,7 +36,7 @@ export const SearchBar = () => {
             if(searchRes.length === 0)
                 setError("No Search Result Found, try with a different string");
         }
-    }, 500);
+    }, 0);
 
     const handleSearch = (searchText) => {
         debouncedSearch(searchText);

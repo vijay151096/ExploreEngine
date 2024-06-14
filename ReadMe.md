@@ -34,3 +34,11 @@ or
 > ctrl + c
 
 application would be running on port : 3000
+
+To Populate the mongoDB with default values : 
+
+> http://localhost:8080/words/populate
+
+To Clean the values from mongoDB 
+
+> http://localhost:8080/words/clean

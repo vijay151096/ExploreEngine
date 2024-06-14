@@ -1,10 +1,14 @@
 version: "1.0.0"
 services:
   explore-engine-server:
-    image: vijaykumar151096/explore-engine-server:latest
+    image: vijaykumar151096/explore-engine-server:mongodb
     ports:
       - 8080:8080
   explore-engine-view:
-    image: vijaykumar151096/explore-engine-view:latest
+    image: vijaykumar151096/explore-engine-view:mongodb
     ports:
       - 3000:3000
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
