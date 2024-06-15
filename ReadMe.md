@@ -5,18 +5,18 @@
 ### explore-engine-server is a node js application for the backend
 
 - To Build the docker image :
-> docker build -t vijaykumar151096/explore-engine-server .
+> docker build -t vijaykumar151096/explore-engine-server:elastic .
 
 - To Run the docker image :
-> docker run vijaykumar151096/explore-engine-server 
+> docker run vijaykumar151096/explore-engine-server:elastic 
 
 ### explore-engine-view is a react js application for the frontend
 
 - To Build the docker image :
-> docker build -t vijaykumar151096/explore-engine-view .
+> docker build -t vijaykumar151096/explore-engine-view:elastic .
 
 - To Run the docker image :
-> docker run vijaykumar151096/explore-engine-view 
+> docker run vijaykumar151096/explore-engine-view:elastic
 
 
 ### Running the Entire Application : 
@@ -33,12 +33,26 @@ or
 
 > ctrl + c
 
-application would be running on port : 3000
+Application would be running on port : 3000
 
-To Populate the mongoDB with default values : 
+To Populate the Elastic Search with default values for searching: 
 
 > http://localhost:8080/words/populate
 
 To Clean the values from mongoDB 
 
 > http://localhost:8080/words/clean
+
+**Elastic Search :** 
+
+The elastic search is running on http://localhost:9200
+
+**username :** elastic 
+
+**password :** 1234
+
+
+
+
+
+

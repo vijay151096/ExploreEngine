@@ -39,8 +39,8 @@ where N is no of Strings and M is the length of the strings
 - It has a search bar with list of sugesstions in the bottom div.
 
 ### Optimization in the Front End 
-- we have introduced debounced search, instead of calling the API for every keyPress, we call the API when the timeout is reached.
-- (or) user gives some time after continuous typing.
+- we have introduced debounced search, instead of calling the API for every keyPress, we call the API when the timeout is reached
+- (or) user gives some time after continuous typing, For now It is set to default value of 0ms.
 - which help us reduce the overload of network calls on the server.
 
 ### Input Validations
@@ -50,3 +50,23 @@ where N is no of Strings and M is the length of the strings
 - we throw inline warning for such negative scenarios
 
 ------------
+
+## DB used for ExpressEngine is Elastic-Search : 
+
+### why no-sql db ? 
+- The Express Engine search has very little relation between the data. and it can have huge frequency of data load.
+- no-sql is highly suitable for this scenario, where there is minimal relation between the data and
+- handling huge load of data with high throughput and low latency
+
+### why elastic seaarch is used ? 
+- the considered options are mongo db and elastic search, which is more suitable for our search, handling multiple search queries
+- we chose elastic search over mongo db for these major reasons.
+  - elastic search uses inverted index for optimized querying.
+  - elastic search also offers handling sharding, replication, low latency for querying which helps us in horizontal scalling as well.
+- since express engine is mainly focused on search with low latency, we prefered elastic search.
+
+### Optimizations done in express engine on DB :
+- we chose elastic search to improve the search query performance.
+- we have used **"size"** to reduce the number of response from the db, so that the query is not heavy.
+- we used **"source"** to limit the no of fields from the response.
+- Handled Exceptions gracefully.
